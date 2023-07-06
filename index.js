@@ -21,7 +21,7 @@ mongoose.model("User", mongoose.Schema({ name: String }));
 
 const app = express();
 
-app.get("/users/:tenantId", function (req, res) {
+app.get("/users", function (req, res) {
   const db = mongoose.connection.useDb(`main`, {
     // `useCache` tells Mongoose to cache connections by database name, so
     // `mongoose.connection.useDb('foo', { useCache: true })` returns the
